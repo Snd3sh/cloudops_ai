@@ -1,0 +1,503 @@
+
+/* ==============================
+   CloudOps AI - Global Styles
+   ============================== */
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #e5e7eb;
+  background: #0b1120;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body {
+  width: 100%;
+  min-width: 320px;
+  min-height: 100%;
+  margin: 0;
+  background: #0b1120;
+}
+
+body {
+  min-height: 100vh;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* ==============================
+   Main Dashboard
+   ============================== */
+
+.app {
+  width: 100%;
+  max-width: 1600px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 32px clamp(24px, 4vw, 60px);
+  color: #e5e7eb;
+  background: #0b1120;
+}
+
+/* ==============================
+   Header
+   ============================== */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 30px;
+}
+
+.eyebrow {
+  margin: 0;
+  color: #60a5fa;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+h1 {
+  margin: 8px 0;
+  font-size: clamp(30px, 3vw, 42px);
+  line-height: 1.2;
+  letter-spacing: -1px;
+}
+
+.subtitle {
+  margin: 6px 0 0;
+  color: #94a3b8;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.source-badge {
+  flex-shrink: 0;
+  border: 1px solid #475569;
+  border-radius: 20px;
+  padding: 10px 14px;
+  color: #cbd5e1;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+/* ==============================
+   Statistics Cards
+   ============================== */
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+.stat-card,
+.panel {
+  min-width: 0;
+  background: #111b2e;
+  border: 1px solid #263449;
+  border-radius: 14px;
+}
+
+.stat-card {
+  padding: 22px 24px;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.stat-card:hover {
+  background: #152137;
+  border-color: #3b5273;
+}
+
+.stat-card p {
+  margin: 0 0 14px;
+  color: #94a3b8;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.stat-card strong {
+  display: block;
+  font-size: 34px;
+  line-height: 1.2;
+}
+
+/* ==============================
+   Dashboard Panels
+   ============================== */
+
+.panel {
+  width: 100%;
+  margin-bottom: 22px;
+  padding: 24px;
+}
+
+.panel h2 {
+  margin: 0 0 22px;
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+/* ==============================
+   AWS Instance Content
+   ============================== */
+
+.aws-summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.aws-instance-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.aws-instance {
+  min-width: 0;
+  padding: 18px;
+  background: #0d1728;
+  border: 1px solid #263449;
+  border-radius: 10px;
+}
+
+.aws-instance h3 {
+  margin: 0 0 12px;
+  font-size: 16px;
+}
+
+.aws-instance p {
+  color: #94a3b8;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+.aws-instance strong {
+  color: #e5e7eb;
+}
+
+/* ==============================
+   Server Table
+   ============================== */
+
+.table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+th,
+td {
+  padding: 16px 12px;
+  border-bottom: 1px solid #263449;
+  white-space: nowrap;
+}
+
+th {
+  color: #94a3b8;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+td {
+  font-size: 14px;
+}
+
+td strong {
+  display: block;
+  font-size: 14px;
+}
+
+td small {
+  display: block;
+  margin-top: 5px;
+  color: #94a3b8;
+  font-size: 12px;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+tbody tr:hover {
+  background: #152137;
+}
+
+/* ==============================
+   Server Status Badges
+   ============================== */
+
+.status,
+.severity {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.status.running {
+  color: #86efac;
+  background: #123426;
+}
+
+.status.stopped,
+.severity.high,
+.severity.critical {
+  color: #fca5a5;
+  background: #451f2a;
+}
+
+.status.pending,
+.severity.medium {
+  color: #fcd34d;
+  background: #453417;
+}
+
+.severity.low {
+  color: #86efac;
+  background: #123426;
+}
+
+/* ==============================
+   CPU Usage Bar
+   ============================== */
+
+.cpu-cell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cpu-track {
+  width: 100px;
+  height: 7px;
+  flex-shrink: 0;
+  overflow: hidden;
+  background: #263449;
+  border-radius: 8px;
+}
+
+.cpu-fill {
+  height: 100%;
+  background: #60a5fa;
+  border-radius: 8px;
+  transition: width 0.3s ease;
+}
+
+.cpu-fill.high {
+  background: #f87171;
+}
+
+/* ==============================
+   Detected Incidents
+   ============================== */
+
+.incident-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 14px;
+}
+
+.incident {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  min-width: 0;
+  padding: 18px;
+  background: #111b2e;
+  border: 1px solid #263449;
+  border-radius: 10px;
+}
+
+.incident strong {
+  font-size: 14px;
+}
+
+.incident p {
+  margin: 8px 0;
+  color: #cbd5e1;
+  font-size: 14px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.incident small {
+  color: #94a3b8;
+  font-size: 12px;
+}
+
+.severity {
+  flex-shrink: 0;
+}
+
+/* ==============================
+   Errors and Footer
+   ============================== */
+
+.error {
+  padding: 14px;
+  color: #fca5a5;
+  background: #451f2a;
+  border: 1px solid #71313d;
+  border-radius: 10px;
+}
+
+footer {
+  padding: 18px 0;
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* ==============================
+   Tablets and Small Laptops
+   ============================== */
+
+@media (max-width: 1024px) {
+  .app {
+    padding: 28px 24px;
+  }
+
+  .stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .panel {
+    padding: 20px;
+  }
+}
+
+/* ==============================
+   Mobile Phones
+   ============================== */
+
+@media (max-width: 600px) {
+  .app {
+    padding: 20px 14px;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  h1 {
+    font-size: 30px;
+    overflow-wrap: anywhere;
+  }
+
+  .subtitle {
+    font-size: 14px;
+  }
+
+  .stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .stat-card {
+    padding: 16px;
+  }
+
+  .stat-card p {
+    font-size: 12px;
+  }
+
+  .stat-card strong {
+    font-size: 28px;
+  }
+
+  .panel {
+    padding: 15px;
+    margin-bottom: 16px;
+  }
+
+  .panel h2 {
+    font-size: 18px;
+  }
+
+  table {
+    min-width: 600px;
+  }
+
+  th,
+  td {
+    padding: 13px 10px;
+  }
+
+  .incident-list {
+    grid-template-columns: 1fr;
+  }
+
+  .incident {
+    padding: 14px;
+    gap: 10px;
+  }
+
+  .cpu-track {
+    width: 55px;
+  }
+}
+
+/* ==============================
+   Very Narrow Phones
+   ============================== */
+
+@media (max-width: 360px) {
+  .app {
+    padding: 12px 10px;
+  }
+
+  .stats {
+    gap: 8px;
+  }
+
+  .stat-card {
+    padding: 12px;
+  }
+
+  .stat-card strong {
+    font-size: 24px;
+  }
+
+  .panel {
+    padding: 10px;
+  }
+
+  .incident {
+    flex-direction: column;
+  }
+}

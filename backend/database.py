@@ -19,6 +19,25 @@ def initialize_database():
                 severity TEXT NOT NULL,
                 message TEXT NOT NULL,
                 detected_at TIMESTAMPTZ NOT NULL,
-                resolved_at TIMESTAMPTZ
+                resolved_at TIMESTAMPTZ,
+                diagnosis TEXT,
+                recommendation TEXT,
+                investigated_at TIMESTAMPTZ
             )
+        """)
+
+        # Add new columns to existing databases safely.
+        connection.execute("""
+            ALTER TABLE incident_history
+            ADD COLUMN IF NOT EXISTS diagnosis TEXT
+        """)
+
+        connection.execute("""
+            ALTER TABLE incident_history
+            ADD COLUMN IF NOT EXISTS recommendation TEXT
+        """)
+
+        connection.execute("""
+            ALTER TABLE incident_history
+            ADD COLUMN IF NOT EXISTS investigated_at TIMESTAMPTZ
         """)

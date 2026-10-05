@@ -897,29 +897,4 @@ Future improvements may include:
 - Infrastructure-as-code integration
 - Kubernetes monitoring
 
----
 
-## Disclaimer
-
-CloudOps AI is an educational and development project.
-
-AWS infrastructure changes can incur costs and may affect cloud resources. Always use appropriate permissions, testing environments, and approval mechanisms before executing infrastructure changes.
-
-The current project primarily uses simulated infrastructure for development and testing.
-
----
-
-## Author
-
-**Sandesh**
-
-Final Year Project — CloudOps AI
-
-GitHub:  
-https://github.com/Snd3sh/cloudops_ai
-
----
-
-## License
-
-This project is currently intended for educational and academic purposes.
